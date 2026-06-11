@@ -40,10 +40,7 @@ const App = () => {
       }
   
   useEffect(() => {
-    const storedContacts = localStorage.getItem('contacts') || [];
-    if (storedContacts) {
-      setFormData(JSON.parse(storedContacts));
-    }
+    setFormData(JSON.parse(localStorage.getItem('contacts')) || []);
   },[])
   
   function handleDelete(index) {
