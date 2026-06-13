@@ -66,13 +66,17 @@ const App = () => {
   
   return (
     <div className="h-screen w-full flex flex-col bg-black md:flex-row gap-4 overflow-y-auto">
-      <div className="h-full bg-black text-white w-full md:w-1/3" style={cardStyle}>
+      <div
+        className="h-full bg-black text-white w-full md:w-1/3"
+        style={cardStyle}
+      >
         <form
           onSubmit={handleSubmit}
           className="flex flex-col gap-10 p-4 items-center justify-center h-full w-full"
         >
           <input
             value={Image}
+            autoComplete="new-password"
             onChange={(e) => setImage(e.target.value)}
             className="w-80 border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
             type="text"
@@ -80,6 +84,7 @@ const App = () => {
           />
           <input
             value={Name}
+            autoComplete="new-password"
             onChange={(e) => setName(e.target.value)}
             className=" w-80 border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
             type="text"
@@ -87,6 +92,7 @@ const App = () => {
           />
           <input
             value={Email}
+            autoComplete="new-password"
             onChange={(e) => setEmail(e.target.value)}
             className="w-80 border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
             type="email"
@@ -94,6 +100,7 @@ const App = () => {
           />
           <input
             value={PhoneNumber}
+            autoComplete="new-password"
             onChange={(e) => setPhoneNumber(e.target.value)}
             className="w-80 border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
             type="tel"
@@ -101,6 +108,7 @@ const App = () => {
           />
           {Gen ? (
             <button
+              onClick={() => setGen(false)}
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md active:scale-96 cursor-pointer"
               type="submit"
             >
